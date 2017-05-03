@@ -6,4 +6,4 @@ git status 查看当前仓库的状态
 git diff 查看difference
 git checkout -- 文件名 discard changes
 git reset HEAD 文件名 to unstage
-git log 【--pretty=online 美化日志】查看提交日志		 
+git log 【--pretty=oneline 美化日志】查看提交日志		 
