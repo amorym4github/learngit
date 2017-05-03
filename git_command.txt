@@ -5,10 +5,11 @@ git add 文件名 告诉git把文件添加到仓库（把文件添加到暂存�
 git commit -m "提交内容说明" 告诉git把文件提交到仓库（将暂存区的内容提交到当前分支）
 git status 查看当前仓库的状态
 git diff 查看difference
-git checkout -- 文件名 discard changes（清空暂存区）
-git reset HEAD 文件名 to unstage
+git checkout -- 文件名 discard changes
+git reset HEAD 文件名 to unstage（清空暂存区）
 git reset --hard HEAD^ 回退到上一个版本 or HEAD~1
 		  --hard HEAD^^ 回退到上上个版本 or HEAD~2
 git reset --hard 提交的id	
 git reflog 查看命令历史，记录每一次命令，可以看到所有的commit_id,方便之后版本的前进	  
 git log 【--pretty=oneline 美化日志】查看提交历史
+  
