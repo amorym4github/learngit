@@ -1,11 +1,11 @@
 git init 把这个目录变为git可以管理的仓库
 		 ls -ah 查看隐藏的文件or文件夹
 		 cat 文件名 查看文件内容
-git add 文件名 告诉git把文件添加到仓库
-git commit -m "提交内容说明" 告诉git把文件提交到仓库
+git add 文件名 告诉git把文件添加到仓库（把文件添加到暂存区）
+git commit -m "提交内容说明" 告诉git把文件提交到仓库（将暂存区的内容提交到当前分支）
 git status 查看当前仓库的状态
 git diff 查看difference
-git checkout -- 文件名 discard changes
+git checkout -- 文件名 discard changes（清空暂存区）
 git reset HEAD 文件名 to unstage
 git reset --hard HEAD^ 回退到上一个版本 or HEAD~1
 		  --hard HEAD^^ 回退到上上个版本 or HEAD~2
