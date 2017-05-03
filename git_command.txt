@@ -11,4 +11,4 @@ git reset --hard HEAD^ 回退到上一个版本 or HEAD~1
 		  --hard HEAD^^ 回退到上上个版本 or HEAD~2
 git reset --hard 提交的id	
 git reflog 查看命令历史，记录每一次命令，可以看到所有的commit_id,方便之后版本的前进	  
-git log 【--pretty=oneline 美化日志】查看提交历史	
+git log 【--pretty=oneline 美化日志】查看提交历史
