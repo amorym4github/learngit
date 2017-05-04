@@ -1,17 +1,91 @@
+﻿学习地址：http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
 git init 把这个目录变为git可以管理的仓库
 		 ls -ah 查看隐藏的文件or文件夹
 		 cat 文件名 查看文件内容
 git add 文件名 告诉git把文件添加到仓库（把文件添加到暂存区）
+git rm 文件名 删除文件
 git commit -m "提交内容说明" 告诉git把文件提交到仓库（将暂存区的内容提交到当前分支）
 git status 查看当前仓库的状态
-git diff (-- 文件名)查看difference 查看工作区和暂存区的差别
-git diff HEAD (-- 文件名) 查看工作区和和版本库最新版本的差别
-git diff -cached 文件名 
+git diff【-- 文件名】查看difference 查看工作区和暂存区的差别
+git diff HEAD【-- 文件名】 查看工作区和和版本库最新版本的差别
+git diff --cached【-- 文件名】 查看暂存区和版本库最新版本的差别
 git checkout -- 文件名 （discard changes，文件还没添加到暂存区）
-git reset HEAD 文件名  （to unstage（清空暂存区））
+git reset HEAD【-- 文件名】（to unstage（清空暂存区））
 git reset --hard HEAD^ 回退到上一个版本 or HEAD~1
 		  --hard HEAD^^ 回退到上上个版本 or HEAD~2
 git reset --hard 提交的id	
 git reflog 查看命令历史，记录每一次命令，可以看到所有的commit_id,方便之后版本的前进	  
-git log 【--pretty=oneline 美化日志】查看提交历史
-  
+git log 【--graph --pretty=oneline --abbrev-commit 美化日志】查看提交历史
+---------建立远程仓库--------
+注册github账号 
+创建SSH Key （本地git仓库和github仓库的传输是通过ssh加密的，用来识别提交人）
+ssh-keygen -t rsa -C "email"
+登陆github Add SSH Key 的key文本框粘贴id_rsa.pub的内容
+----------添加远程仓库--------
+1.create new repository
+2.将本地仓库与github上的远程仓库关联
+  git remote add origin git地址
+3.将本地库的内容推送到远程
+  git push -u origin master
+  由于远程库是空的，我们第一次推送master分支时，加上了-u参数，
+  Git不但会把本地的master分支内容推送的远程新的master分支，
+  还会把本地的master分支和远程的master分支关联起来，
+  在以后的推送或者拉取时就可以简化命令（即不需要-u参数）
+----------克隆远程仓库--------
+git clone git地址
+-----------git分支------------
+git branch 查看分支
+git branch <name> 创建分支
+git checkout <name> 切换分支
+git checkout -b <name> 创建并切换分支
+git merge <name> 合并分支
+git branch -d <name> 删除分支
+git branch -D <name> 强制删除分支（即便在未合并分支的情况下）
+
+通常，合并分支时，如果可能，Git会用Fast forward模式，
+但这种模式下，删除分支后，会丢掉分支信息。
+因此，可以--no-off参数，表示禁用Fast forward
+git merge --no--off "merge with no-ff" <name>
+
+git stash 把当前工作现场“储藏起来”
+git stash list 查看所有stash
+git stash apply stash@{0} 及 git stash drop 等于 git stash pop
+返回工作现场
+
+git remote 查看远程库的信息
+git remote -v 查看远程库更详细的信息
+git push orgin <name> 把分支内容推送远程库
+git pull 从远程库拉取最新代码
+git branch --set-upstream branch-name orgin/branch-name 将本地分支与远程分支建立链接关系
+git checkout -b branch-name orgin/branch-name 在本地创建与远程分支对应的分支
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
