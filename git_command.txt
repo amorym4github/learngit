@@ -7,8 +7,8 @@ git status 查看当前仓库的状态
 git diff (-- 文件名)查看difference 查看工作区和暂存区的差别
 git diff HEAD (-- 文件名) 查看工作区和和版本库最新版本的差别
 git diff -cached 文件名 
-git checkout -- 文件名 discard changes
-git reset HEAD 文件名 to unstage（清空暂存区）
+git checkout -- 文件名 （discard changes）
+git reset HEAD 文件名  （to unstage（清空暂存区））
 git reset --hard HEAD^ 回退到上一个版本 or HEAD~1
 		  --hard HEAD^^ 回退到上上个版本 or HEAD~2
 git reset --hard 提交的id	
